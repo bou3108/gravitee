@@ -62,7 +62,7 @@ job "gravitee-apim-gateway" {
   		}
 	    }
 	    artifact {
-	    	source	= "http://repo.proxy-dev-forge.asip.hst.fluxus.net/artifactory/asip-releases/fr/ans/psc/generateVIHF/1.5.0/generateVIHF-1.5-0.zip"
+	    	source	= "http://repo.proxy-dev-forge.asip.hst.fluxus.net/artifactory/asip-releases/fr/ans/psc/generateVIHF/1.5.0/generateVIHF-1.5.0.zip"
 		options {
 			archive = false
 		}
