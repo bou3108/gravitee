@@ -62,7 +62,7 @@ job "gravitee-apim-gateway" {
   		}
 	    }
 	    artifact {
-	    	source	= "http://repo.proxy-dev-forge.asip.hst.fluxus.net/artifactory/asip-snapshots/fr/ans/psc/generateVIHF/4.1.0-SNAPSHOT/generateVIHF-4.1.0-SNAPSHOT.zip"
+	    	source	= "http://repo.proxy-dev-forge.asip.hst.fluxus.net/artifactory/asip-snapshots/fr/ans/psc/api-proxy/1.0.0-SNAPSHOT/api-proxy-1.0.0-SNAPSHOT.zip"
 		options {
 			archive = false
 		}
@@ -89,8 +89,8 @@ job "gravitee-apim-gateway" {
 	  		}
 		mount {
 			type = "bind"
-			target = "/opt/graviteeio-gateway/plugins/generateVIHF-4.1.0-SNAPSHOT.zip"
-			source = "local/generateVIHF-4.1.0-SNAPSHOT.zip"
+			target = "/opt/graviteeio-gateway/plugins/api-proxy-1.0.0-SNAPSHOT.zip"
+			source = "local/api-proxy-1.0.0-SNAPSHOT.zip"
 			readonly = false
 			bind_options {
 				propagation = "rshared"
@@ -146,15 +146,6 @@ EOD
                 destination = "secrets/.env"
                 env = true
             }
-	    
-	    env = {
-                "groovy.whitelist.mode" = "append"
-                "groovy.whitelist.list[0]" = "class groovy.util.slurpersupport.Node"
-                "groovy.whitelist.list[1]" = "class groovy.util.slurpersupport.NodeChild"
-                "groovy.whitelist.list[2]" = "class groovy.util.XmlSlurper"
-                "groovy.whitelist.list[3]" = "class groovy.util.XmlParser"
-                "groovy.whitelist.list[4]" = "class groovy.util.slurpersupport.GPathResult"
-	    }
 
             service {
                 name = "$\u007BNOMAD_JOB_NAME\u007D"
