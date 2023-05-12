@@ -1,12 +1,12 @@
-project = "gravitee/mongodb"
+project = "bbo-gravitee/mongodb"
 
 labels = { "domaine" = "gravitee" }
 
 runner {
     enabled = true
     data_source "git" {
-        url  = "https://github.com/ansforge/gravitee.git"
-        ref  = "var.datacenter"
+        url  = "https://github.com/bou3108/gravitee.git"
+        ref  = "main"
         path = "mongodb"
         ignore_changes_outside_path = true
     }
@@ -16,7 +16,7 @@ runner {
     }
 }
 
-app "gravitee/mongodb" {
+app "bbo-gravitee/mongodb" {
 
     build {
         use "docker-pull" {
