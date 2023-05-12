@@ -1,4 +1,4 @@
-project = "gravitee/elasticsearch"
+project = "bbo-gravitee/elasticsearch"
 
 # Labels can be specified for organizational purposes.
 labels = { "domaine" = "gravitee" }
@@ -6,8 +6,8 @@ labels = { "domaine" = "gravitee" }
 runner {
     enabled = true   
     data_source "git" {
-        url  = "https://github.com/ansforge/gravitee.git"
-        ref  = "var.datacenter"
+        url  = "https://github.com/bou3108/gravitee.git"
+        ref  = "main"
         path = "elasticsearch"
         ignore_changes_outside_path = true
     }
@@ -17,7 +17,7 @@ runner {
     }
 }
 # An application to deploy.
-app "gravitee/elasticsearch" {
+app "bbo-gravitee/elasticsearch" {
 
     build {
         use "docker-pull" {
